@@ -1,18 +1,30 @@
+body {
+  max-width: 700px;
+  margin: 0 auto;
+}
 h1 {
   color: teal;
+  text-align: center;
 }
-
-#container {
-  border: 1px solid blue;
-  padding: 10px;
-  margin: 30px;
+h3{
+  text-decoration: underline;
+  width: 120px;
+  display: inline-block;
 }
-
-.person {
-  border: 2px solid black;
-  padding: 2px;
+input, label{
+  width: 150px;
+  display: inline-block;
+  margin-top: 10px;
 }
-
 .clicked {
   border-color: red;
+}
+#container {
+  border: 1px solid blue;
+  padding: 5px;
+  margin-top: 10px;
+}
+#container p{
+  width: 125px;
+  display: inline-block;
 }
