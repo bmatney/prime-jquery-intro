@@ -1,5 +1,7 @@
 $(document).ready(function () {
     var array = [];
+    var totalSalary = 0;
+
     $('#employeeinfo').on('submit', function (event) {
         event.preventDefault();
 
@@ -32,10 +34,14 @@ $(document).ready(function () {
       $el.append('<p>' + empInfo.employeeJobTitle + '</p>');
       $el.append('<p>' + parseInt(empInfo.employeeSalary) + '</p>');
 
+      $("#adjustedSalary").remove();
+
       $('#monthlySalary').append('<div class="sal"></div>');
       var salaries = $('#monthlySalary').children().last();
-      var salarySum = empInfo.employeeSalary / 12;
+      var salarySum = Math.round(empInfo.employeeSalary / 12);
+      totalSalary += salarySum;
 
-      salaries.append('<p class="adjustedSalary">Month Salary Expenditures: $' + (salarySum + salarySum) + '</p>');
+      $(".newSalary").remove();
+      salaries.append('<p class="newSalary">Month Salary Expenditures: $' + totalSalary + '</p>');
     }
   });
