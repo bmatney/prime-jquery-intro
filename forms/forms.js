@@ -13,14 +13,20 @@ $(document).ready(function () {
 
       $('#employeeinfo').find('input[type=text]').val('');
       $('#employeeinfo').find('input[type=number]').val('');
-
       $('.newSalary').remove();
 
       console.log(values);
 
       appendDom(values);
 
+      $('button').click(function(event) {
+        event.preventDefault();
+        $(this).closest('.person').remove();
+      });
+
     });
+
+
 
     function appendDom(empInfo) {
       $('#container').append('<div class="person"></div>');
@@ -31,6 +37,7 @@ $(document).ready(function () {
       $el.append('<p>' + empInfo.employeeIdNumber + '</p>');
       $el.append('<p>' + empInfo.employeeJobTitle + '</p>');
       $el.append('<p>' + empInfo.employeeSalary + '</p>');
+      $el.append('<button class="delete">delete</button>');
 
       $('#monthlySalary').append('<div class="sal"></div>');
       var salaries = $('#monthlySalary').children().last();
